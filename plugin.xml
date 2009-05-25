@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         point="ch.ivyteam.ivy.server.IServerExtension">
+      <ivyServerExtension
+            class="ch.ivyteam.ivy.example.process.element.extensions.MyOwnServerExtension">
+      </ivyServerExtension>
+   </extension>
+   <extension
+         point="ch.ivyteam.ivy.designer.process.ui.IIvyProcessPaletteExtension">
+      <ivyProcessPaletteExtension
+            class="ch.ivyteam.ivy.example.process.element.extensions.MyOwnProcessPaletteExtension">
+      </ivyProcessPaletteExtension>
+   </extension>
+   <extension
+         point="ch.ivyteam.ivy.java.IIvyProjectClassPathExtension">
+      <ivyProjectClassPathExtension
+            class="ch.ivyteam.ivy.example.process.element.extensions.MyOwnIvyProjectClassPathExtension">
+      </ivyProjectClassPathExtension>
+   </extension>
+   <extension
+         point="ch.ivyteam.ivy.process.element.IExtensibleStandardProcessElementExtension">
+      <extensibleStandardProcessElementExtension
+            class="ch.ivyteam.ivy.example.process.element.extensions.MyOwnExtensibleStandardProcessElementExtension">
+      </extensibleStandardProcessElementExtension>
+   </extension>
+   <extension
+         point="ch.ivyteam.ivy.designer.process.ui.IProcessElementUiInformationExtension">
+      <processElementUiInformationExtension
+            class="ch.ivyteam.ivy.example.process.element.extensions.MyOwnProcessElementUiInformationExtension">
+      </processElementUiInformationExtension>
+   </extension>
+
+</plugin>
