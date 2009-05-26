@@ -38,6 +38,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     {
       return "My Own Intermediate Event can be used to wait for a My Own event during a process";
     }
+    else if (processElementClassName.equals("MyOwnProgramUserInterface"))
+    {
+      return "My Own Program User Interface can be used to show a user interface to the user during a process";
+    }
     return null;
   }
 
@@ -58,6 +62,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     {
       return "My Own Intermediate Event";
     }
+    else if (processElementClassName.equals("MyOwnProgramUserInterface"))
+    {
+      return "My Own User Dialog";
+    }
     return null;
   }
 
@@ -77,6 +85,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     else if (processElementClassName.equals("MyOwnIntermediateEvent"))
     {
       return "MyOwnIntermediate";
+    }
+    else if (processElementClassName.equals("MyOwnProgramUserInterface"))
+    {
+      return "MyOwnDialog";
     }
     return null;
   }
