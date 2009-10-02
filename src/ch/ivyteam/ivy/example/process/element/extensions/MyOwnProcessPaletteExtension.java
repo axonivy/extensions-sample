@@ -22,6 +22,7 @@ public class MyOwnProcessPaletteExtension implements IIvyProcessPaletteExtension
     palette.addProcessElementEntry(MYOWN_GROUP, "MyOwnStartEvent", 2000);
     palette.addProcessElementEntry(MYOWN_GROUP, "MyOwnIntermediateEvent", 3000);
     palette.addProcessElementEntry(MYOWN_GROUP, "MyOwnProgramUserInterface", 4000);
+    palette.addProcessElementEntry(MYOWN_GROUP, "MyOwnCallAndWait", 6000);
   }
 
   /**

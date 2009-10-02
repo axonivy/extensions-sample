@@ -42,6 +42,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     {
       return "My Own Program User Interface can be used to show a user interface to the user during a process";
     }
+    else if (processElementClassName.equals("MyOwnCallAndWait"))
+    {
+      return "My Own Call&Wait can be used to call My Own functions and the wait for the response";
+    }
     return null;
   }
 
@@ -66,6 +70,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     {
       return "My Own User Dialog";
     }
+    else if (processElementClassName.equals("MyOwnCallAndWait"))
+    {
+      return "My Own Call&Wait";
+    }
     return null;
   }
 
@@ -89,6 +97,10 @@ public class MyOwnProcessElementUiInformationExtension implements
     else if (processElementClassName.equals("MyOwnProgramUserInterface"))
     {
       return "MyOwnDialog";
+    }
+    else if (processElementClassName.equals("MyOwnCallAndWait"))
+    {
+      return "MyOwnCall&Wait";
     }
     return null;
   }

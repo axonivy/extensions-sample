@@ -64,6 +64,14 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
         return iconFactory.createActivityBpmnIcon(new ImageIcon(iconUrl), false);
       }
     }
+    else if (iconName.equals("MyOwnCallAndWaitIcon"))
+    {
+      iconUrl = getClass().getClassLoader().getResource("/ch/ivyteam/ivy/example/process/element/extensions/MyOwnElement_small.png");
+      if (iconUrl != null)
+      {     
+        return iconFactory.createIntermediateEventBpmnIcon(new ImageIcon(iconUrl));
+      }
+    }
     return null;
   }
 
@@ -76,5 +84,6 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
     factory.declareStartEventProcessElement("MyOwnStartEvent", "ch.ivyteam.ivy.example.process.element.extensions.MyOwnStartEventBean", "MyOwnStartEventIcon");
     factory.declareIntermediateEventProcessElement("MyOwnIntermediateEvent", "ch.ivyteam.ivy.example.process.element.extensions.MyOwnIntermediateEventBean", "MyOwnIntermediateEventIcon");
     factory.declareProgramUserInterfaceProcessElement("MyOwnProgramUserInterface", "ch.ivyteam.ivy.example.process.element.extensions.MyOwnProgramUserInterfaceBean", "MyOwnProgramUserInterface");
+    factory.declareCallAndWaitProcessElement("MyOwnCallAndWait", "ch.ivyteam.ivy.example.process.element.extensions.MyOwnCallAndWaitBean", "MyOwnCallAndWaitIcon");
   }
 }
