@@ -1,7 +1,6 @@
 package ch.ivyteam.ivy.example.process.element.extensions;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.runtime.Path;
@@ -37,7 +36,7 @@ public class MyOwnIvyProjectClassPathExtension implements
   public List<IAccessRule> getCompileClassPathAccessRules(String bundleIdentifier)
   {
     return Arrays.asList(new IAccessRule[]{
-            JavaCore.newAccessRule(new Path("ch.ivyteam.ivy.example.process.element.extensions/*"), IAccessRule.K_ACCESSIBLE), EXCLUDE_ALL_OTHER_RULE
+            JavaCore.newAccessRule(new Path("ch/ivyteam/ivy/example/process/element/extensions/*"), IAccessRule.K_ACCESSIBLE), EXCLUDE_ALL_OTHER_RULE
     });
   }
   
