@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Process Element Extension Example
 Bundle-SymbolicName: ch.ivyteam.ivy.example.process.element.extensions;singleton:=true
 Bundle-Version: 1.0.0
-Bundle-Vendor: ivyTeam
+Bundle-Vendor: ivyTeam AG
 Require-Bundle: ch.ivyteam.ivy.server,
  ch.ivyteam.ivy.designer.process.ui,
  org.eclipse.jdt.core;bundle-version="3.2.3",
