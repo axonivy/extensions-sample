@@ -15,7 +15,6 @@ import ch.ivyteam.awtExt.AWTUtil;
 import ch.ivyteam.awtExt.CommonDialogs;
 import ch.ivyteam.ivy.process.extension.IIvyScriptEditor;
 import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment;
-import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx;
 import ch.ivyteam.ivy.process.intermediateevent.AbstractProcessIntermediateEventBean;
 import ch.ivyteam.ivy.process.intermediateevent.IProcessIntermediateEventBeanConfigurationEditorEx;
 
@@ -27,12 +26,6 @@ import ch.ivyteam.ivy.process.intermediateevent.IProcessIntermediateEventBeanCon
 public class MyOwnIntermediateEventBean extends
         AbstractProcessIntermediateEventBean
 {  
-  /**
-   * Constructor
-   * @param _name
-   * @param _description
-   * @param objectClass
-   */
   public MyOwnIntermediateEventBean()
   {
     super("MyOwn", "My Own Intermediate Event Bean", String.class);
@@ -59,6 +52,7 @@ public class MyOwnIntermediateEventBean extends
      *
      *@param  config  the configuration as an String
      */
+    @Override
     public void setConfiguration(String config)
     {
       editor.setText(config);
@@ -69,6 +63,7 @@ public class MyOwnIntermediateEventBean extends
      *
      *@return    this
      */
+    @Override
     public Component getComponent()
     {
       return this;
@@ -80,6 +75,7 @@ public class MyOwnIntermediateEventBean extends
      *
      *@return    The configuration as an String
      */
+    @Override
     public String getConfiguration()
     {
       try
@@ -96,6 +92,7 @@ public class MyOwnIntermediateEventBean extends
     /**
      *@return boolean
      */
+    @Override
     public boolean acceptInput()
     {
       return true;
@@ -104,6 +101,7 @@ public class MyOwnIntermediateEventBean extends
     /**
      * @see ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx#setEnvironment(ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment)
      */
+    @Override
     public void setEnvironment(
             IProcessExtensionConfigurationEditorEnvironment environment)
     {
@@ -124,6 +122,7 @@ public class MyOwnIntermediateEventBean extends
     /**
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
+    @Override
     public void actionPerformed(ActionEvent arg0)
     {
       Object object;

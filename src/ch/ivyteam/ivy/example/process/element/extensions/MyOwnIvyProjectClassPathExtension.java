@@ -20,11 +20,13 @@ public class MyOwnIvyProjectClassPathExtension implements
 
 
 
+  @Override
   public List<String> getClassLoaderContributingBundles()
   {
     return Arrays.asList(new String[]{"ch.ivyteam.ivy.example.process.element.extensions"});
   }
 
+  @Override
   public List<String> getCompileClassPathContributingBundles()
   {
     return Arrays.asList(new String[]{"ch.ivyteam.ivy.example.process.element.extensions"});
@@ -33,6 +35,7 @@ public class MyOwnIvyProjectClassPathExtension implements
   /**
    * @see ch.ivyteam.ivy.java.IIvyProjectClassPathExtension#getCompileClassPathAccessRules(java.lang.String)
    */
+  @Override
   public List<IAccessRule> getCompileClassPathAccessRules(String bundleIdentifier)
   {
     return Arrays.asList(new IAccessRule[]{
@@ -43,6 +46,7 @@ public class MyOwnIvyProjectClassPathExtension implements
   /**
    * @see ch.ivyteam.ivy.java.IIvyProjectClassPathExtension#getCompileClassPath(java.lang.String)
    */
+  @Override
   public List<String> getCompileClassPath(String bundleIdentifier)
   {
     return null;

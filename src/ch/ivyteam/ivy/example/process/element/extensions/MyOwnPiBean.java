@@ -10,21 +10,16 @@ import java.util.Arrays;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.ScrollPaneConstants;
 
 import ch.ivyteam.awtExt.AWTUtil;
 import ch.ivyteam.awtExt.CommonDialogs;
 import ch.ivyteam.ivy.process.engine.IRequestId;
 import ch.ivyteam.ivy.process.extension.IIvyScriptEditor;
-import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditor;
 import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment;
 import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx;
-import ch.ivyteam.ivy.process.extension.IUserProcessExtension;
 import ch.ivyteam.ivy.process.extension.impl.AbstractUserProcessExtension;
 import ch.ivyteam.ivy.scripting.language.IIvyScriptContext;
 import ch.ivyteam.ivy.scripting.objects.CompositeObject;
-import ch.ivyteam.ivy.server.IServerExtension;
 
 /**
  * Implementation of my own pi bean
@@ -37,6 +32,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
   /**
    * @see ch.ivyteam.ivy.process.extension.IUserProcessExtension#perform(ch.ivyteam.ivy.process.engine.IRequestId, ch.ivyteam.ivy.scripting.objects.CompositeObject, ch.ivyteam.ivy.scripting.language.IIvyScriptContext)
    */
+  @Override
   public CompositeObject perform(IRequestId requestId, CompositeObject in,
           IIvyScriptContext context) throws Exception
   {
@@ -74,6 +70,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
      *
      *@param  config  the configuration as an String
      */
+    @Override
     public void setConfiguration(String config)
     {
       editor.setText(config);
@@ -84,6 +81,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
      *
      *@return    this
      */
+    @Override
     public Component getComponent()
     {
       return this;
@@ -95,6 +93,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
      *
      *@return    The configuration as an String
      */
+    @Override
     public String getConfiguration()
     {
       try
@@ -111,6 +110,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
     /**
      *@return boolean
      */
+    @Override
     public boolean acceptInput()
     {
       return true;
@@ -119,6 +119,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
     /**
      * @see ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx#setEnvironment(ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment)
      */
+    @Override
     public void setEnvironment(
             IProcessExtensionConfigurationEditorEnvironment environment)
     {
@@ -139,6 +140,7 @@ public class MyOwnPiBean extends AbstractUserProcessExtension
     /**
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
+    @Override
     public void actionPerformed(ActionEvent arg0)
     {
       Object object;

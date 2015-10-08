@@ -17,7 +17,6 @@ import ch.ivyteam.ivy.process.eventstart.AbstractProcessStartEventBean;
 import ch.ivyteam.ivy.process.eventstart.IProcessStartEventBeanConfigurationEditorEx;
 import ch.ivyteam.ivy.process.extension.IIvyScriptEditor;
 import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment;
-import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx;
 
 /**
  * My own implementation of a start event bean
@@ -27,11 +26,6 @@ import ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx;
 public class MyOwnStartEventBean extends AbstractProcessStartEventBean
 {
 
-  /**
-   * Constructor
-   * @param _name
-   * @param _description
-   */
   public MyOwnStartEventBean()
   {
     super("MyOwn", "MyOwn Start Event");
@@ -58,6 +52,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
      *
      *@param  config  the configuration as an String
      */
+    @Override
     public void setConfiguration(String config)
     {
       editor.setText(config);
@@ -68,6 +63,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
      *
      *@return    this
      */
+    @Override
     public Component getComponent()
     {
       return this;
@@ -79,6 +75,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
      *
      *@return    The configuration as an String
      */
+    @Override
     public String getConfiguration()
     {
       try
@@ -95,6 +92,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
     /**
      *@return boolean
      */
+    @Override
     public boolean acceptInput()
     {
       return true;
@@ -103,6 +101,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
     /**
      * @see ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEx#setEnvironment(ch.ivyteam.ivy.process.extension.IProcessExtensionConfigurationEditorEnvironment)
      */
+    @Override
     public void setEnvironment(
             IProcessExtensionConfigurationEditorEnvironment environment)
     {
@@ -123,6 +122,7 @@ public class MyOwnStartEventBean extends AbstractProcessStartEventBean
     /**
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
+    @Override
     public void actionPerformed(ActionEvent arg0)
     {
       Object object;

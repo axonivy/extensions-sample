@@ -13,10 +13,6 @@ public class MyOwnProcessElementUiInformationExtension implements
         IProcessElementUiInformationExtension
 {
 
-  /**
-   * 
-   * Constructor
-   */
   public MyOwnProcessElementUiInformationExtension()
   {
   }
@@ -24,6 +20,7 @@ public class MyOwnProcessElementUiInformationExtension implements
   /**
    * @see ch.ivyteam.ivy.designer.process.ui.info.IProcessElementUiInformationExtension#getDescription(java.lang.String, java.util.Locale)
    */
+  @Override
   public String getDescription(String processElementClassName, Locale locale)
   {
     if (processElementClassName.equals("MyOwnStep"))
@@ -52,6 +49,7 @@ public class MyOwnProcessElementUiInformationExtension implements
   /**
    * @see ch.ivyteam.ivy.designer.process.ui.info.IProcessElementUiInformationExtension#getName(java.lang.String, java.util.Locale)
    */
+  @Override
   public String getName(String processElementClassName, Locale locale)
   {
     if (processElementClassName.equals("MyOwnStep"))
@@ -80,6 +78,7 @@ public class MyOwnProcessElementUiInformationExtension implements
   /**
    * @see ch.ivyteam.ivy.designer.process.ui.info.IProcessElementUiInformationExtension#getShortName(java.lang.String, java.util.Locale)
    */
+  @Override
   public String getShortName(String processElementClassName, Locale locale)
   {
     if (processElementClassName.equals("MyOwnStep"))
@@ -93,10 +92,6 @@ public class MyOwnProcessElementUiInformationExtension implements
     else if (processElementClassName.equals("MyOwnIntermediateEvent"))
     {
       return "MyOwnIntermediate";
-    }
-    else if (processElementClassName.equals("MyOwnProgramUserInterface"))
-    {
-      return "MyOwnDialog";
     }
     else if (processElementClassName.equals("MyOwnCallAndWait"))
     {

@@ -48,9 +48,10 @@ public class MyOwnCallAndWaitBean extends AbstractUserAsynchronousProcessExtensi
     waitUntil = new Date(new Date().getTime()+time.longValue());
     eventIdentifier = SecurityManagerFactory.getSecurityManager().executeAsSystem(new Callable<String>(){
 
+      @Override
       public String call() throws Exception
       {
-        return ""+getCase(context).getProcessModel().getIdentifier()+":"+getProcessElementIdentifier()+":"+generateGlobalUniqueEventIdentifier();
+        return ""+getCase(context).getProcessModel().getId()+":"+getProcessElementIdentifier()+":"+generateGlobalUniqueEventIdentifier();
       }});
     synchronized(performedRequests)
     {
@@ -182,7 +183,7 @@ public class MyOwnCallAndWaitBean extends AbstractUserAsynchronousProcessExtensi
     {
       if (eventIdPrefix == null)
       {
-        eventIdPrefix = getEventBeanRuntime().getIntermediateEventElement().getProcessModelVersion().getIdentifier()+":"+
+        eventIdPrefix = getEventBeanRuntime().getIntermediateEventElement().getProcessModelVersion().getId()+":"+
                             getEventBeanRuntime().getIntermediateEventElement().getProcessElementId();
       }
       return eventIdPrefix;

@@ -14,6 +14,7 @@ public class MyOwnServerExtension implements IServerExtension
   /**
    * @see ch.ivyteam.ivy.server.IServerExtension#getIdentifier()
    */
+  @Override
   public String getIdentifier()
   {
     return getClass().getName();
@@ -22,6 +23,7 @@ public class MyOwnServerExtension implements IServerExtension
   /**
    * @see ch.ivyteam.ivy.lifecycle.ILifecycle#getName()
    */
+  @Override
   public String getName()
   {
     return "MyOwn";
@@ -30,20 +32,19 @@ public class MyOwnServerExtension implements IServerExtension
   /**
    * @see ch.ivyteam.ivy.lifecycle.ILifecycle#start(org.eclipse.core.runtime.IProgressMonitor)
    */
-  public void start(@SuppressWarnings("unused") IProgressMonitor monitor) throws Exception
+  @Override
+  public void start(IProgressMonitor monitor) throws Exception
   {
   }
 
   /**
    * @see ch.ivyteam.ivy.lifecycle.ILifecycle#stop(org.eclipse.core.runtime.IProgressMonitor)
    */
-  public void stop(@SuppressWarnings("unused") IProgressMonitor monitor) throws Exception
+  @Override
+  public void stop(IProgressMonitor monitor) throws Exception
   {
   }
 
-  /**
-   * @return
-   */
   public String[] getMethods()
   {
     return new String[]{"a", "b", "c"};

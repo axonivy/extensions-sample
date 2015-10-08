@@ -21,6 +21,7 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
   /**
    * @see ch.ivyteam.ivy.components.IStandardProcessElementExtension#getName()
    */
+  @Override
   public String getName()
   {
     return "MyOwnProcessElements";
@@ -29,6 +30,7 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
   /**
    * @see ch.ivyteam.ivy.components.IStandardProcessElementExtension#createBpmnIcon(ch.ivyteam.ivy.process.element.IBpmnIconFactory, java.lang.String)
    */
+  @Override
   public Icon createBpmnIcon(IBpmnIconFactory iconFactory, String iconName)
   {
     URL iconUrl;
@@ -56,14 +58,6 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
         return iconFactory.createIntermediateEventBpmnIcon(new ImageIcon(iconUrl));
       }
     }
-    else if (iconName.equals("MyOwnProgramUserInterface"))
-    {
-      iconUrl = getClass().getClassLoader().getResource("/ch/ivyteam/ivy/example/process/element/extensions/MyOwnElement_small.png");
-      if (iconUrl != null)
-      {     
-        return iconFactory.createActivityBpmnIcon(new ImageIcon(iconUrl), false);
-      }
-    }
     else if (iconName.equals("MyOwnCallAndWaitIcon"))
     {
       iconUrl = getClass().getClassLoader().getResource("/ch/ivyteam/ivy/example/process/element/extensions/MyOwnElement_small.png");
@@ -78,6 +72,7 @@ public class MyOwnExtensibleStandardProcessElementExtension implements
   /**
    * @see ch.ivyteam.ivy.process.element.IExtensibleStandardProcessElementExtension#declareProcessElements(ch.ivyteam.ivy.process.element.IExtensibleProcessElementFactory)
    */
+  @Override
   public void declareProcessElements(IExtensibleProcessElementFactory factory)
   {
     factory.declareProgramInterfaceProcessElement("MyOwnStep", "ch.ivyteam.ivy.example.process.element.extensions.MyOwnPiBean", "MyOwnStepIcon");

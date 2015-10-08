@@ -16,6 +16,7 @@ public class MyOwnProcessPaletteExtension implements IIvyProcessPaletteExtension
   /**
    * @see ch.ivyteam.ivy.designer.process.ui.editor.palette.IIvyProcessPaletteExtension#addEntries(ch.ivyteam.ivy.designer.process.ui.editor.palette.IIvyProcessPalette)
    */
+  @Override
   public void addEntries(IIvyProcessPalette palette)
   {
     palette.addProcessElementEntry(MYOWN_GROUP, "MyOwnStep", 1000);
@@ -28,6 +29,7 @@ public class MyOwnProcessPaletteExtension implements IIvyProcessPaletteExtension
   /**
    * @see ch.ivyteam.ivy.designer.process.ui.editor.palette.IIvyProcessPaletteExtension#addGroups(ch.ivyteam.ivy.designer.process.ui.editor.palette.IIvyProcessPalette)
    */
+  @Override
   public void addGroups(IIvyProcessPalette palette)
   {
     palette.addGroup(MYOWN_GROUP, "MyOwn", 10000);
